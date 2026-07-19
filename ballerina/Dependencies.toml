@@ -251,7 +251,8 @@ dependencies = [
 	{org = "ballerinax", name = "postgresql.driver"}
 ]
 modules = [
-	{org = "ballerinax", packageName = "postgresql", moduleName = "postgresql"}
+	{org = "ballerinax", packageName = "postgresql", moduleName = "postgresql"},
+	{org = "ballerinax", packageName = "postgresql", moduleName = "postgresql.mcp"}
 ]
 
 [[package]]
