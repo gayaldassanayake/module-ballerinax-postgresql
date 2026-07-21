@@ -1,0 +1,29 @@
+# Sample configuration for the PostgreSQL MCP server.
+# Copy to Config.toml and fill in real values, or override any key at the
+# command line with `bal run -- -CvarName=value`.
+#
+# Never commit real credentials. The Config.toml checked into this example
+# only works against the throwaway database started by docker-compose.yml.
+
+# --- Connection ---
+dbHost = "localhost"
+dbPort = 5432
+dbUsername = "mcp_user"
+dbPassword = "mcp_password"
+dbName = "mcp_demo"
+
+# --- MCP server ---
+# Port the streamable-HTTP MCP listener binds to. The server is reachable at
+# http://localhost:<mcpPort>/mcp — there is no stdio transport (Ballerina's
+# `ballerina/mcp` module does not support one).
+mcpPort = 8080
+mcpPath = "/mcp"
+
+# Defense-in-depth only. When true (the default), execute_statement,
+# batch_execute_statement, and call_procedure are refused at call time.
+# The tools remain visible in the MCP tool list either way.
+#
+# The actual security boundary must be a dedicated, least-privilege
+# PostgreSQL role on the connection itself (e.g. one with no INSERT/UPDATE/
+# DELETE/DDL grants) — this flag does not substitute for that.
+readOnly = true

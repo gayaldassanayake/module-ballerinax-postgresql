@@ -9,6 +9,16 @@ icon = "icon.png"
 license = ["Apache-2.0"]
 distribution = "2201.13.0"
 
+[[package.modules]]
+name = "postgresql.mcp"
+export = true
+
+[[dependency]]
+org = "ballerina"
+name = "mcp"
+version = "1.1.1"
+repository = "local"
+
 [platform.java21]
 graalvmCompatible = true
 
