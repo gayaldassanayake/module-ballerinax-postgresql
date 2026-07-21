@@ -16,8 +16,7 @@ export = true
 [[dependency]]
 org = "ballerina"
 name = "mcp"
-version = "1.1.1"
-repository = "local"
+version = "1.1.0"
 
 [platform.java21]
 graalvmCompatible = true

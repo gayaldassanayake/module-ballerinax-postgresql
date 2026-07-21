@@ -80,6 +80,7 @@ task updateTomlFiles {
         newConfig = newConfig.replace('@sql.version@', stdlibDependentSqlVersion)
         newConfig = newConfig.replace('@sql.native.version@', project.stdlibSqlVersion)
         newConfig = newConfig.replace('@stdlib.sql.version@', stdlibDependentSqlVersion)
+        newConfig = newConfig.replace('@mcp.version@', project.stdlibMcpVersion)
         ballerinaTomlFile.text = newConfig
 
         def newCompilerPluginToml = compilerPluginTomlFilePlaceHolder.text.replace("@project.version@", project.version)
